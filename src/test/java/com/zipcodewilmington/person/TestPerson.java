@@ -10,7 +10,8 @@ public class TestPerson {
     @Test
     public void testDefaultConstructor() {
         // Given
-        String expectedName = "";
+
+        String expectedName = "John";
         Integer expectedAge = Integer.MAX_VALUE;
 
         // When
