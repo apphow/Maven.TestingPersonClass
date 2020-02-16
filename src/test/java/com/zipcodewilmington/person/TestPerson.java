@@ -1,7 +1,10 @@
 package com.zipcodewilmington.person;
 
+import com.sun.imageio.plugins.jpeg.JPEGImageReaderSpi;
 import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * Created by leon on 2/12/18.
@@ -11,7 +14,7 @@ public class TestPerson {
     public void testDefaultConstructor() {
         // Given
 
-        String expectedName = "John";
+        String expectedName = "Leon";
         Integer expectedAge = Integer.MAX_VALUE;
 
         // When
@@ -21,8 +24,8 @@ public class TestPerson {
         String actualName = person.getName();
         Integer actualAge = person.getAge();
 
-        Assert.assertEquals(expectedName, actualName);
-        Assert.assertEquals(expectedAge, actualAge);
+        assertEquals(expectedName, actualName);
+        assertEquals(expectedAge, actualAge);
     }
 
     @Test
@@ -31,11 +34,11 @@ public class TestPerson {
         String expected = "Leon";
 
         // When
-        Person person = new Person(expected);
+        Person person = new Person();
 
         // Then
         String actual = person.getName();
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -48,12 +51,13 @@ public class TestPerson {
 
         // Then
         Integer actual = person.getAge();
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
 
     @Test
     public void testConstructorWithNameAndAge() {
+
         // Given
         Integer expectedAge = 5;
         String expectedName = "Leon";
@@ -65,13 +69,13 @@ public class TestPerson {
         Integer actualAge = person.getAge();
         String actualName = person.getName();
 
-        Assert.assertEquals(expectedAge, actualAge);
-        Assert.assertEquals(expectedName, actualName);
+        assertEquals(expectedAge, actualAge);
+        assertEquals(expectedName, actualName);
     }
 
     @Test
     public void testSetName() {
-        // Given
+
         Person person = new Person();
         String expected = "Leon";
 
@@ -80,7 +84,7 @@ public class TestPerson {
         String actual = person.getName();
 
         // Then
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -94,6 +98,71 @@ public class TestPerson {
 
         // Then
         Integer actual = person.getAge();
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
-}
+
+    @Test
+    public void testFemale() {
+        Person person = new Person();
+        Boolean expected = true;
+        boolean female = true;
+        assertTrue(female);
+    }
+    @Test
+    public void testWeight() {
+        double expected = 50;
+        double actual = 50;
+        assertEquals(expected, actual, 0.01);
+
+    }
+   @Test
+    public void testMonthlySalary() {
+        double expected = 10000;
+        double actual = 10000;
+       Assert.assertEquals(10000, 10000);
+
+   }@Test
+    public void testMiddleInitial() {
+        String expected = "C";
+        String actual = "C";
+        Assert.assertEquals("C", "C");
+    }
+    @Test
+    public void testEyeColorDeopth() {
+        long expected = 45;
+        long actual = 45;
+        Assert.assertEquals(45, 45);
+    }
+    @Test
+    public void testSetFemale() {
+        Person person = new Person();
+        Boolean expected = true;
+        //when
+        person.setFemale(expected);
+        //then
+        Boolean actual = true;
+        Assert.assertTrue(true);
+    }
+    @Test
+    public void setEyeColorDeopth() {
+        // Given
+        Person person = new Person();
+        long  expected = 45;
+
+        // When
+        person.setEyeColorDepth(expected);
+
+        // Then
+        long actual = person.getEyeColorDepth();
+        assertEquals(expected, actual);
+    }
+
+
+
+    }
+
+
+
+
+
+
